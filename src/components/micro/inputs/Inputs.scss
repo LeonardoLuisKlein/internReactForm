@@ -1,0 +1,43 @@
+.labelInput{
+    font-size: 0.9em;
+    color: #767676;
+}
+
+.smallInput{
+    color: #111111;
+    border: 2px solid #aaaaaa;
+    border-radius: 4px;
+    background: none;
+    padding: 5px 5px 5px 10px;
+    font-size: 1em;
+    width: 20%;
+    &:focus {
+      outline: 0;
+    }
+}
+
+.mediumInput{
+    color: #111111;
+    border: 2px solid #aaaaaa;
+    border-radius: 4px;
+    background: none;
+    padding: 5px 5px 5px 10px;
+    font-size: 1em;
+    width: 60%;
+    &:focus {
+      outline: 0;
+    }
+}
+
+.bigInput{
+    color: #111111;
+    border: 2px solid #aaaaaa;
+    border-radius: 4px;
+    background: none;
+    padding: 5px 5px 5px 10px;
+    font-size: 1em;
+    width: 80%;
+    &:focus {
+      outline: 0;
+    }
+}
