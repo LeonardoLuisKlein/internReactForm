@@ -1,0 +1,23 @@
+div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+#checkLabel{
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+
+    color: #111111;
+}
+
+#checkbox{
+    width: 25px;
+    height: 25px;
+
+    accent-color: #0DBDBD;
+    border: 2px solid #0DBDBD;
+    border-radius: 2px;
+}
+}
