@@ -1,4 +1,4 @@
-div{
+#chkContainer{
     display: flex;
     align-items: center;
     gap: 10px;
@@ -8,16 +8,21 @@ div{
     font-style: normal;
     font-weight: 400;
     font-size: 1.5rem;
-
     color: #111111;
+    @media (max-width: 768px) {
+        font-size: 1.1rem;
+      }
 }
 
 #checkbox{
     width: 25px;
     height: 25px;
-
     accent-color: #0DBDBD;
     border: 2px solid #0DBDBD;
     border-radius: 2px;
+    @media (max-width: 768px) {
+        width: 15px;
+        height: 15px;
+      }
 }
 }

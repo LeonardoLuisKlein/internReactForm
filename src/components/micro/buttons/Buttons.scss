@@ -1,6 +1,7 @@
 button{
     border: none;
     font-size: 1.2rem;
+    cursor: pointer;
 }
 
 .smallButton{
@@ -10,6 +11,9 @@ button{
     color: #FFF;
     background: #0DBDBD;
     border-radius: 10px;
+    @media (max-width: 768px) {
+        width: 100%;
+      }
 }
 
 .bigButton{
