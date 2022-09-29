@@ -1,43 +1,29 @@
+.inputContainer{
+  display: flex;
+  flex-flow: column nowrap;
+}
+
 .labelInput{
-    font-size: 0.9em;
+    font-size: 1.2rem;
     color: #767676;
-}
-
-.smallInput{
-    color: #111111;
-    border: 2px solid #aaaaaa;
-    border-radius: 4px;
-    background: none;
-    padding: 5px 5px 5px 10px;
-    font-size: 1em;
-    width: 20%;
-    &:focus {
-      outline: 0;
+    display: flex;
+    @media (max-width: 768px) {
+      font-size: 1.1rem;
     }
 }
 
-.mediumInput{
+input{
     color: #111111;
-    border: 2px solid #aaaaaa;
+    border: 2.5px solid #aaaaaa;
     border-radius: 4px;
     background: none;
     padding: 5px 5px 5px 10px;
-    font-size: 1em;
-    width: 60%;
+    font-size: 1.2rem;
     &:focus {
       outline: 0;
+    }
+    @media (max-width: 768px) {
+      font-size: 1rem;
     }
 }
 
-.bigInput{
-    color: #111111;
-    border: 2px solid #aaaaaa;
-    border-radius: 4px;
-    background: none;
-    padding: 5px 5px 5px 10px;
-    font-size: 1em;
-    width: 80%;
-    &:focus {
-      outline: 0;
-    }
-}

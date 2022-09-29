@@ -3,12 +3,12 @@ import './Checkbox.scss'
 
 export const Checkbox = () => {
   return (
-    <div>
+    <div id="chkContainer">
     <input
       type="checkbox"
       id="checkbox"
     />
-    <span id="checkLabel">
+    <span id="checkLabel" for="checkbox">
       I accept the terms and privacy
     </span>
   </div>
