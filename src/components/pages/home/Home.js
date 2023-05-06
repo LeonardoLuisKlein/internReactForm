@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Home.scss";
 
 import { Title } from "../../micro/title/Title";
@@ -8,8 +8,62 @@ import { Checkbox } from "../../micro/checkbox/Checkbox";
 import { Image } from "../../micro/image/Image";
 
 export const Home = () => {
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const [isChecked, setIsChecked] = useState(false);
+  const [isValidCheckbox, setIsValidCheckbox] = useState(true);
+
+  const [isValidName, setIsValidName] = useState(true);
+  const [isValidEmail, setIsValidEmail] = useState(true);
+  const [isValidPassword, setIsValidPassword] = useState(true);
+
+  const handleNameChange = (value) => {
+    setName(value);
+  };
+
+  const handleEmailChange = (value) => {
+    setEmail(value);
+  };
+
+  const handlePasswordChange = (value) => {
+    setPassword(value);
+  };
+
+  const handleCheckboxChange = (isChecked) => {
+    setIsChecked(isChecked);
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    // Validação do campo de nome
+    const nameRegex = /^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/;
+    const isValidNameInput = nameRegex.test(name);
+    setIsValidName(isValidNameInput);
+
+    // Validação do campo de email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const isValidEmailInput = emailRegex.test(email);
+    setIsValidEmail(isValidEmailInput);
+
+    // Validação do campo de senha
+    const passwordRegex = /^[0-9]{6,9}$/;
+    const isValidPasswordInput = passwordRegex.test(password);
+    setIsValidPassword(isValidPasswordInput);
+
+    const isValidCheckboxInput = isChecked;
+    setIsValidCheckbox(isValidCheckboxInput);
+
+    if (isValidNameInput && isValidEmailInput && isValidPasswordInput && isValidCheckboxInput) {
+      console.log('Formulário válido!');
+    }
+  };
+
   return (
-    <section>
+    <form onSubmit={handleFormSubmit}>
       <div id="title">
         <Title idTitle="basicTitle" title="Intern Sign Up" />
         <Image imageClass="titleImage"/>
@@ -17,57 +71,64 @@ export const Home = () => {
         <div id="forms">
         <Inputs
           labelText="FullName*"
-          labelFor="Name"
           inputType="text"
-          inputId="Name"
-          inputClass="bigInput flexInput"
+          inputId="bigInput"
           placehInput="Name"
-          inputSpan="FullName Invalid"
+          errorMessage="FullName Invalid"
           containerType="bigContainer"
+          value={name}
+          onChange={handleNameChange}
+          regex={/^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/}
+          isValid={isValidName}
         />
         <Inputs
           labelText="Email*"
-          labelFor="email"
           inputType="text"
-          inputId="email"
-          inputClass="mediumInput flexInput"
+          inputId="mediumInput"
           placehInput="foo@bar.com"
-          inputSpan="Email Invalid"
+          errorMessage="Email Invalid"
           containerType="mediumContainer"
+          value={email}
+          onChange={handleEmailChange}
+          regex={/^[^\s@]+@[^\s@]+\.[^\s@]+$/}
+          isValid={isValidEmail}
         />
         <Inputs
           labelText="Phone"
-          labelFor="phone"
           inputType="number"
-          inputId="phone"
-          inputClass="smallInput flexInput"
+          inputId="smallInput"
           placehInput="(83) 00000-0000"
           containerType="smallContainer"
         />
         <Inputs
           labelText="Password*"
-          labelFor="password"
           inputType="password"
-          inputId="password"
-          inputClass="mediumInput flexInput"
+          inputId="mediumInput"
           placehInput="Enter your password"
-          inputSpan="Password Invalid"
+          errorMessage="Password Invalid"
           containerType="mediumContainer"
+          value={password}
+          onChange={handlePasswordChange}
+          regex={/^[0-9]{6,9}$/}
+          isValid={isValidPassword}
         />
         <Inputs
-          labelText="Birthday*"
-          labelFor="birthday"
+          labelText="Birthday"
           inputType="date"
-          inputId="birthday"
-          inputClass="smallInput flexInput"
-          inputSpan="Age Invalid"
+          inputId="smallInput"
           containerType="smallContainer"
         />
         </div>
         <div className="footer">
-          <Checkbox />
-          <Buttons classButton="smallButton" textButton="Register" />
+          <Checkbox 
+          checked={isChecked} 
+          onChange={handleCheckboxChange} 
+          isValid={isValidCheckbox} />
+          <Buttons 
+          classButton="smallButton" 
+          textButton="Register" 
+          type="submit"/>
       </div>
-    </section>
+    </form>
   );
 };
