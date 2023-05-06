@@ -22,10 +22,14 @@ input{
     }
 }
 
-#basicError{
-  display: flex;
+.basicError{
+  display: none;
   font-size: 1rem;
   color: red;
+}
+
+.invalid, .basicError {
+  display: flex;
 }
 
 input:focus{
