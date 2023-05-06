@@ -1,13 +1,19 @@
 #chkContainer{
     display: flex;
-    align-items: center;
-    gap: 10px;
+    flex-direction: column;
+    gap: 5px;
+
+#chkInputLabel{
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+}
 
 #checkLabel{
     font-family: 'Nunito';
     font-style: normal;
     font-weight: 400;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: #111111;
     @media (max-width: 768px) {
         font-size: 1.1rem;
@@ -26,3 +32,8 @@
       }
 }
 }
+
+#chkError{
+        font-size: 1rem;
+        color: red;
+      }

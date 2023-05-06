@@ -3,7 +3,7 @@ import './Inputs.scss'
 
 export function Inputs(props) {
   return (
-    <div id="inputContainer">
+    <div id={props.containerType}>
          <label
         className="labelInput"
         htmlFor={props.labelFor}
@@ -17,6 +17,7 @@ export function Inputs(props) {
         placeholder={props.placehInput}
         onChange={props.handleChange}
       />
+      <span id="basicError">{props.inputSpan}</span>
     </div>
   )
 }

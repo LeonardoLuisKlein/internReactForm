@@ -4,13 +4,16 @@ import './Checkbox.scss'
 export const Checkbox = () => {
   return (
     <div id="chkContainer">
+    <div id="chkInputLabel">
     <input
       type="checkbox"
       id="checkbox"
     />
-    <span id="checkLabel" for="checkbox">
+    <label id="checkLabel" for="checkbox">
       I accept the terms and privacy
-    </span>
+    </label>
+    </div>
+    <span id="chkError">You must accept the terms</span>
   </div>
   )
 }

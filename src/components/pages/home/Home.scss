@@ -1,7 +1,10 @@
 section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
     background-color: white;
     width: 668px;
-    height: 750px;
+    height: 800px;
     margin: 0 auto;
     border-radius: 20px;
     padding: 15px 50px;
@@ -9,54 +12,81 @@ section {
         width: 100vw;
         height: 100vh;
         border-radius: 0px;
+        gap: 0px;
       }
+    @media ( max-height: 800px) {
+      width: 100vw;
+        height: 100vh;
+        border-radius: 0px;
+        gap: 0px;
+    }
 
-    .forms{
-        display: flex;
-        flex-flow: column nowrap;
-        row-gap: 20px;
+    }
+
+    .titleImage{
+      @media (max-width: 768px) {
+        width: 110px;
+        height: 110px;
+      }
+    }
+
+    #forms{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 30px;
+      @media (max-width: 768px) {
+        gap: 10px;
         margin-top: 10px;
-    
+        
+      }
+    }
+#smallContainer{
+          width: 39%;
+          @media (max-width: 768px) {
+            width: 48%;
+            order: 2;
+          }
+  }
 .smallInput{
-    width: 35%;
-    &:focus {
-      outline: 0;
-    }
-    @media (max-width: 768px) {
-        width: 50%;
-      }
+    width: 100%;
 }
-
+#mediumContainer{
+  width: 55%;
+  @media (max-width: 768px) {
+    width: 100%;
+    order: 1;
+  }
+}
 .mediumInput{
-    width: 60%;
-    &:focus {
-      outline: 0;
-    }
-    @media (max-width: 768px) {
-        width: 100%;
-      }
+    width: 100%;
 }
 
+#bigContainer{
+  width: 99%;
+  @media (max-width: 768px) {
+    width: 100%;
+    order: 0;
+  }
+}
 .bigInput{
     width: 100%;
-    &:focus {
-      outline: 0;
-    }
     @media (max-width: 768px) {
       }
     
 }
-    }
 
+    
 .footer{
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 10px;
     @media (max-width: 768px) {
         flex-flow: column nowrap;
         gap: 5px;
       }
 }
-}
+
     
 

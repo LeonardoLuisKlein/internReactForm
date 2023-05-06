@@ -5,7 +5,7 @@ import { Success } from './components/pages/success/Success'
 function App() {
   return (
     <div className="App">
-      <Success />
+      <Home />
     </div>
   );
 }
