@@ -13,9 +13,6 @@ export const Success = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Lógica de envio do formulário
-
-    // Após o envio bem-sucedido do formulário, navegar para a página de sucesso
     navigate('/');
   };
 

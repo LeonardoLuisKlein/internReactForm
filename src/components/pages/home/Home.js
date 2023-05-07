@@ -40,17 +40,14 @@ export const Home = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
-    // Validação do campo de nome
     const nameRegex = /^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/;
     const isValidNameInput = nameRegex.test(name);
     setIsValidName(isValidNameInput);
 
-    // Validação do campo de email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const isValidEmailInput = emailRegex.test(email);
     setIsValidEmail(isValidEmailInput);
 
-    // Validação do campo de senha
     const passwordRegex = /^[0-9]{6,9}$/;
     const isValidPasswordInput = passwordRegex.test(password);
     setIsValidPassword(isValidPasswordInput);
