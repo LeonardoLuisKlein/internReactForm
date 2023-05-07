@@ -2,7 +2,7 @@ import React from 'react'
 import './Checkbox.scss'
 
 export const Checkbox = (props) => {
-  const { label, checked, onChange, errorMessage, isValid } = props;
+  const { checked, onChange, isValid } = props;
 
   const handleCheckboxChange = (e) => {
     const isChecked = e.target.checked;
