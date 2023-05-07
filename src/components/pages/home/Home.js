@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import "./Home.scss";
 
 import { Title } from "../../micro/title/Title";
@@ -8,7 +9,7 @@ import { Checkbox } from "../../micro/checkbox/Checkbox";
 import { Image } from "../../micro/image/Image";
 
 export const Home = () => {
-
+  const navigate = useNavigate();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -58,7 +59,7 @@ export const Home = () => {
     setIsValidCheckbox(isValidCheckboxInput);
 
     if (isValidNameInput && isValidEmailInput && isValidPasswordInput && isValidCheckboxInput) {
-      console.log('Formulário válido!');
+      navigate('/success')
     }
   };
 
