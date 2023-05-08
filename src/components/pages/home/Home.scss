@@ -48,6 +48,10 @@ form {
             width: 48%;
             order: 2;
           }
+          @media (max-width: 768px) {
+            width: 47%;
+            order: 2;
+          }
   }
 #smallInput{
     width: 100%;
