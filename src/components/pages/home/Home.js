@@ -58,6 +58,7 @@ export const Home = () => {
     if (isValidNameInput && isValidEmailInput && isValidPasswordInput && isValidCheckboxInput) {
       navigate('/success')
     }
+
   };
 
   return (
